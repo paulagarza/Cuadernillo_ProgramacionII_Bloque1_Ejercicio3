@@ -12,7 +12,7 @@ template <typename T>
 class Dispensario {
 private:
     // Atributos
-    vector<shared_ptr<Medicamento>> contenedor;
+    vector<shared_ptr<T>> contenedor;
 
 public:
     // Constructor por defecto
@@ -21,12 +21,12 @@ public:
     }
 
     // Constructor parametrizado
-    Dispensario(const vector<shared_ptr<Medicamento>>& contenedor) : contenedor(contenedor) {
+    Dispensario(const vector<shared_ptr<T>>& contenedor) : contenedor(contenedor) {
 
     }
 
     // Sobrecarga del operador +
-    Dispensario operator+(shared_ptr<Medicamento>& o) {
+    Dispensario operator+(shared_ptr<T>& o) {
         contenedor.push_back(o);
         return *this;
     }
